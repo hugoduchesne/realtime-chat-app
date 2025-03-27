@@ -17,8 +17,6 @@ const io = new Server(server, {
 
 app.use(express.json());
 
-const __dirname = path.resolve();
-
 const frontendPath = resolve(__dirname, "../../frontend/dist");
 app.use(express.static(frontendPath));
 
@@ -30,7 +28,8 @@ io.on("connection", (socket) => {
   setupChatSocket(socket, io);
 });
 
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
