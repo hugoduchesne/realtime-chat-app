@@ -1,4 +1,4 @@
-import { User } from "@/models/User";
+import { User } from "../models/User";
 
 class UserStore {
   private users: Map<string, User> = new Map();

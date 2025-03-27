@@ -3,6 +3,7 @@ import http from "http";
 import path from "path";
 import { Server } from "socket.io";
 import { setupChatSocket } from "./sockets/chat";
+import { resolve } from "path";
 
 const app = express();
 
@@ -16,7 +17,9 @@ const io = new Server(server, {
 
 app.use(express.json());
 
-const frontendPath = path.resolve(__dirname, "../../frontend/dist");
+const __dirname = path.resolve();
+
+const frontendPath = resolve(__dirname, "../../frontend/dist");
 app.use(express.static(frontendPath));
 
 app.get("*", (_req, res) => {

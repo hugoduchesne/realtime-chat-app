@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
-import { Message } from "@/models/Message";
-import { User } from "@/models/User";
+import { Message } from "../models/Message";
+import { User } from "../models/User";
 
 export function createMessage(sender: User, messageContent: string): Message {
   return {

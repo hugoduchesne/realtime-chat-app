@@ -1,4 +1,4 @@
-import { User } from "@/models/User";
+import { User } from "./User";
 
 export interface Message {
   id: string;

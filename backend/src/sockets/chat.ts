@@ -1,8 +1,8 @@
 import { Server, Socket } from "socket.io";
 import { v4 as uuid } from "uuid";
-import { createMessage } from "@/controllers/messageController";
-import { userStore } from "@/stores/UserStore";
-import { messageStore } from "@/stores/MessageStore";
+import { createMessage } from "../controllers/messageController";
+import { userStore } from "../stores/UserStore";
+import { messageStore } from "../stores/MessageStore";
 
 export function setupChatSocket(socket: Socket, io: Server) {
   console.log(`User connected: ${socket.id}`);
