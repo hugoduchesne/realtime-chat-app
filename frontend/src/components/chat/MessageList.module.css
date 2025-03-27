@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 58px - 58px - 2rem);
+  min-height: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-surface) transparent;
+}
+
+.filler {
+  flex-grow: 1;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: var(--color-surface);
+  border-radius: 3px;
+}

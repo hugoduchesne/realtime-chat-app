@@ -1,0 +1,24 @@
+{
+  "name": "messages-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A simple full-stack real-time chat app using React, TypeScript, Express, and Socket.IO. Features dynamic usernames and live messaging. Persistence coming soon.",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
+    "start": "npm run build && npm run start --prefix backend",
+    "dev": "npx concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugoduchesne/realtime-chat-app.git"
+  },
+  "author": {
+    "name": "Hugo Duchesne"
+  },
+  "bugs": {
+    "url": "https://github.com/hugoduchesne/realtime-chat-app/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hugoduchesne/realtime-chat-app"
+}

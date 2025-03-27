@@ -1,0 +1,95 @@
+@import url("reset.css");
+
+:root {
+  --color-background: #050705;
+  --color-surface-darker: #131615;
+  --color-surface: #222a29;
+  --color-surface-lighter: #5a8b86;
+  --color-primary: #b5deda;
+  --color-text: #ffffff;
+
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  color: var(--color-text);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--color-surface);
+  margin: 2rem 0;
+}
+
+input {
+  border: 2px solid var(--color-surface);
+  background: var(--color-surface-darker);
+  transition: var(--transition);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+* {
+  transition: var(--transition);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: var(--color-background);
+}
+
+.header {
+  height: 3.625rem; /* 58px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--color-text);
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.backButton:hover {
+  opacity: 0.85;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
