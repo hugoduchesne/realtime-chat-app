@@ -1,5 +1,6 @@
 import styles from "./MessageBubble.module.css";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import { Message } from "@/types";
 
 interface Props {
@@ -18,7 +19,10 @@ export default function MessageBubble({
   const { sender, message: text } = message;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className={clsx(
         styles.bubbleWrapper,
         isSelf ? styles.self : styles.other
@@ -44,6 +48,6 @@ export default function MessageBubble({
         )}
         <div className={styles.bubble}>{text}</div>
       </div>
-    </div>
+    </motion.div>
   );
 }

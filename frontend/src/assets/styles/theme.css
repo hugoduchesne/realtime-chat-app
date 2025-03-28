@@ -60,12 +60,13 @@ input {
   display: flex;
   flex-direction: column;
   padding: 0 24px;
+  padding-bottom: 24px;
   box-sizing: border-box;
   background-color: var(--color-background);
 }
 
 .header {
-  height: 3.625rem; /* 58px */
+  height: 5rem; /* 58px */
   display: flex;
   align-items: center;
   justify-content: center;

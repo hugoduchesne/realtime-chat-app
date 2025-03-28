@@ -4,13 +4,22 @@ import path from "path";
 import { Server } from "socket.io";
 import { setupChatSocket } from "./sockets/chat";
 import { resolve } from "path";
+import cors from "cors";
 
 const app = express();
+
+const isDev = process.env.NODE_ENV !== "production";
+
+app.use(
+  cors({
+    origin: isDev ? true : ["https://realtime-chat-app-hafu.onrender.com"],
+  })
+);
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: isDev ? true : ["https://realtime-chat-app-hafu.onrender.com"],
     methods: ["GET", "POST"],
   },
 });
@@ -30,6 +39,6 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
